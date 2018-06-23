@@ -4304,3 +4304,10 @@ footer.style8 {
     box-shadow: 0 0 16px 1px #7f7f7f;
     overflow: hidden;
 }
+
+.image-center {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
