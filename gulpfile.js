@@ -3,8 +3,12 @@ var uglify = require('gulp-uglify');
 var cssMin = require('gulp-css')
 var htmlmin = require('gulp-html-minifier');
 
+gulp.task('build', function () {
+    return gulp.src('html_dev/**/*').pipe(gulp.dest('build'));
+});  
+
 gulp.task('js', function(){
-    return gulp.src(['./javascript/*.js', '!./javascript/*min.js', './revolution/js/*.js', '!revolution/js/*min.js'])
+    return gulp.src(['build/**/*.js', '!build/**/*min.js'])
         .pipe(uglify())
         .pipe(gulp.dest(function (file) {
             return file.base;
@@ -12,7 +16,7 @@ gulp.task('js', function(){
 });
 
 gulp.task('css', function(){
-    return gulp.src(['./stylesheet/**/*.css', './revolution/css/*.css'])
+    return gulp.src(['build/**/*.css', '!build/**/*min.css'])
         .pipe(cssMin())
         .pipe(gulp.dest(function (file) {
             return file.base;
@@ -20,11 +24,11 @@ gulp.task('css', function(){
 });
 
 gulp.task('html', function(){
-    return gulp.src(['*.html'])
+    return gulp.src(['build/**/*.html'])
         .pipe(htmlmin({collapseWhitespace: true}))
         .pipe(gulp.dest(function (file) {
             return file.base;
         }));
 });
 
-gulp.task('default', ['css', 'js', 'html'])
+gulp.task('default', ['js', 'css', 'html'])
