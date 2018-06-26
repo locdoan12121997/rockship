@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var uglify = require('gulp-uglify');
-var cssMin = require('gulp-css')
+let cleanCSS = require('gulp-clean-css');
 var htmlmin = require('gulp-html-minifier');
 
 gulp.task('build', function () {
@@ -17,7 +17,7 @@ gulp.task('js', function(){
 
 gulp.task('css', function(){
     return gulp.src(['build/**/*.css', '!build/**/*min.css'])
-        .pipe(cssMin())
+        .pipe(cleanCSS())
         .pipe(gulp.dest(function (file) {
             return file.base;
         }));
@@ -25,7 +25,7 @@ gulp.task('css', function(){
 
 gulp.task('html', function(){
     return gulp.src(['build/**/*.html'])
-        .pipe(htmlmin({collapseWhitespace: true}))
+        .pipe(htmlmin())
         .pipe(gulp.dest(function (file) {
             return file.base;
         }));
