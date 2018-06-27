@@ -23,6 +23,12 @@ jobs:
       - run:
           name: Install dependencies
           command: npm install
+      - run:
+          name: Build folder
+          command: gulp build
+      - run:
+          name: Minify folder
+          command: gulp
       - save_cache:
           paths:
             - node_modules
