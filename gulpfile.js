@@ -24,8 +24,8 @@ gulp.task('css', function(){
 });
 
 gulp.task('html', function(){
-    return gulp.src(['build/**/*.html'])
-        .pipe(htmlmin())
+    return gulp.src(['build/*.html'])
+        .pipe(htmlmin({collapseWhitespace: true}))
         .pipe(gulp.dest(function (file) {
             return file.base;
         }));
