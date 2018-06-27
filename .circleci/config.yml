@@ -24,6 +24,9 @@ jobs:
           name: Install dependencies
           command: npm install
       - run:
+          name: Install gulp globally
+          command: npm install gulp -g
+      - run:
           name: Build folder
           command: gulp build
       - run:
