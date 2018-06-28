@@ -38,4 +38,4 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
       - deploy:
           name: Build & Deploy To S3
-          command: /bin/bash deploy.sh
+          command: /bin/bash deploy.sh  

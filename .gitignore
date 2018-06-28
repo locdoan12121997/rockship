@@ -113,3 +113,5 @@ db/
 .pytest_cache/
 .dev/
 rockship_landing/my-datavolume
+node_modules
+build
