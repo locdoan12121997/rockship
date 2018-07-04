@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+aws s3 rm s3://rockship.co/ --recursive
 
 aws s3 sync 'build/' 's3://rockship.co/' --acl public-read --expires 2592000
 
