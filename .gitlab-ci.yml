@@ -10,7 +10,7 @@ deploy:
    - apt-get upgrade -y
    - apt-get install python-setuptools -y
    - easy_install pip==9.0.1
-   - apt-get install python-dev
+   - apt-get install python-dev -y
    - pip install awscli --upgrade --user
    - aws configure set default.region ap-southeast-1
    - aws configure set preview.cloudfront true
