@@ -6,9 +6,6 @@ cache:
 
 deploy:
   script:
-   - apt-get update
-   - apt-get upgrade -y
-   - apt install awscli -y
    - aws configure set default.region ap-southeast-1
    - aws configure set preview.cloudfront true
    - npm install
