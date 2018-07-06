@@ -6,6 +6,9 @@ cache:
 
 deploy:
   script:
+   - apt-get install python-setuptools
+   - easy_install pip==9.0.1
+   - pip install awscli --upgrade --user
    - aws configure set default.region ap-southeast-1
    - aws configure set preview.cloudfront true
    - npm install
@@ -13,4 +16,3 @@ deploy:
    - gulp build
    - gulp
    - /bin/bash deploy.sh
-   
