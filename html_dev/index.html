@@ -643,7 +643,7 @@
 				</div><!-- /.row -->
 			</div><!-- /.container -->
 		</footer><!-- /.footer style2 -->
-
+		<div class="fb-customerchat" page_id="635530416604751"></div>
 		<div class="button-go-top">
 			<a href="#" title="" class="go-top">
 				<i class="fa fa-chevron-up"></i>
@@ -687,7 +687,25 @@
 	    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.navigation.min.js"></script>
 	    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.parallax.min.js"></script>
 	    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-	    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.video.min.js"></script>
+		<script type="text/javascript" src="revolution/js/extensions/revolution.extension.video.min.js"></script>
+		<script>
+			window.fbAsyncInit = function() {
+				FB.init({
+				appId            : '497332717390832',
+				autoLogAppEvents : true,
+				xfbml            : true,
+				version          : 'v3.0'
+				});
+			};
+
+			(function(d, s, id){
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) {return;}
+				js = d.createElement(s); js.id = id;
+				js.src = "https://connect.facebook.net/en_US/sdk.js";
+				fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+		</script>
 
 </body>	
 </html>
